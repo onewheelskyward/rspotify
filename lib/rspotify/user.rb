@@ -78,7 +78,7 @@ module RSpotify
       super(options)
 
       if credentials
-        set_credentials(credentials)
+        self.set_credentials(credentials)
       end
     end
 
