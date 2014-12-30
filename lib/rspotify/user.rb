@@ -78,10 +78,14 @@ module RSpotify
       super(options)
 
       if credentials
-        @@users_credentials ||= {}
-        @@users_credentials[@id] = credentials
-        @credentials = @@users_credentials[@id]
+        set_credentials(credentials)
       end
+    end
+
+    def self.set_credentials(credentials)
+      @@users_credentials ||= {}
+      @@users_credentials[@id] = credentials
+      @credentials = @@users_credentials[@id]
     end
 
     # Creates a playlist in user's Spotify account. This method is only available when the current user
