@@ -46,7 +46,7 @@ module RSpotify
       users_credentials = if User.class_variable_defined?('@@users_credentials')
         User.class_variable_get('@@users_credentials')
       end
-
+      puts "User credentials: #{users_credentials.inspect}"
       if users_credentials && users_credentials[user_id]
         User.oauth_get(user_id, url)
       else
